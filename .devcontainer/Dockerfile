@@ -33,3 +33,13 @@ RUN apt-get install -y gnupg2 && \
 
 # Set Ruby environment variables
 ENV PATH /usr/local/rvm/rubies/ruby-3.3.4/bin:$PATH
+
+# Install Node.js 20.17
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs=20.17.*
+
+# Install Yarn and pnpm globally
+RUN npm install -g yarn pnpm
+
+# Verify installations
+RUN node -v && npm -v && yarn -v && pnpm -v
