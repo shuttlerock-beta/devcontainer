@@ -40,6 +40,3 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
 
 # Install Yarn and pnpm globally
 RUN npm install -g yarn pnpm
-
-# Verify installations
-RUN node -v && npm -v && yarn -v && pnpm -v

@@ -3,11 +3,10 @@
         "dockerfile": "Dockerfile"
     },
     "customizations": {
-        "vscode": {
-          "extensions": [
-            "GitHub.copilot",
-            "GitHub.copilot-chat"
-          ]
-        }
+      "vscode": {
+        "extensions": [
+          "github.copilot"
+        ]
       }
+    }
 }
