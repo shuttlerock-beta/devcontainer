@@ -23,3 +23,13 @@ ENV PATH=$GOPATH/bin:$PATH
 # Create Go workspace directory
 RUN mkdir -p $GOPATH/src $GOPATH/bin
 
+# Install Ruby 3.3.4
+RUN apt-get install -y gnupg2 && \
+    curl -sSL https://rvm.io/mpapis.asc | gpg --import - && \
+    curl -sSL https://rvm.io/pkuczynski.asc | gpg --import - && \
+    curl -sSL https://get.rvm.io | bash -s stable && \
+    /bin/bash -l -c "rvm install 3.3.4" && \
+    /bin/bash -l -c "rvm use 3.3.4 --default"
+
+# Set Ruby environment variables
+ENV PATH /usr/local/rvm/rubies/ruby-3.3.4/bin:$PATH
